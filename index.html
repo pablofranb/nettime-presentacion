@@ -68,82 +68,90 @@ body.idle{cursor:none}
 .question{position:absolute;left:960px;top:600px;transform:translate(40px,-50%);opacity:0;font-size:116px;font-weight:700;letter-spacing:-.03em;line-height:1}
 .question.show{opacity:1;transform:translate(0,-50%)}
 
-/* 2 · lo que ya existe */
+/* 2 · lo que ya existe: una pregunta y cuatro respuestas */
 .head{position:absolute;top:64px;left:0;right:0;text-align:center;transform-origin:50% 0}
-#compHead.big{transform:translateY(230px) scale(1.18)}
-.title2{font-size:80px;font-weight:700;letter-spacing:-.025em;line-height:1.06;margin-top:16px}
-.title2 .g{color:var(--green)}
-.chips{display:flex;justify-content:center;gap:14px;margin-top:34px}
-.chip{display:flex;align-items:center;gap:10px;padding:12px 22px;border:1.5px solid #E2DED5;background:var(--paper);border-radius:999px;font-size:22px;font-weight:500;color:#2E3833}
-.chip svg{color:var(--green)}
-.cards{position:absolute;top:418px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:30px}
-.card{width:330px;padding:40px 28px 36px;background:#fff;border:1.5px solid #ECE9E2;border-radius:30px;box-shadow:0 24px 60px -34px rgba(20,32,26,.35);display:flex;flex-direction:column;align-items:center;gap:22px;opacity:0;transform:translateY(46px) scale(.97)}
-.card.show{opacity:1;transform:none}
-.card.dim{opacity:.36;transform:scale(.95)}
-.card.hero{transform:scale(1.06)}
-.card-ic{color:var(--ink);height:52px}
-.card-name{font-size:30px;font-weight:600;letter-spacing:-.01em}
-.ring{position:relative;width:190px;height:190px}
-.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
-.ring .track{stroke:#ECE9E2}
-.ring .prog{stroke-dasharray:502.65;stroke-dashoffset:502.65;transition:stroke-dashoffset 1.2s var(--ease) .25s}
-.card.show .prog{stroke-dashoffset:var(--off)}
-.ring-num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
-.ring-num b{font-size:68px;font-weight:700;line-height:1}
-.ring-num span{font-size:28px;color:var(--muted);font-weight:500;margin-left:2px}
-.feats{display:flex;gap:10px}
-.feat{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:#F2F0EB;color:#CFCAC0}
-.feat.y{background:#DDF4E6;color:var(--green)}
-.card.nt{background-color:var(--night);background-image:radial-gradient(500px 300px at 70% 0%,rgba(126,224,168,.18),transparent 70%),linear-gradient(rgba(126,224,168,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(126,224,168,.07) 1px,transparent 1px);background-size:auto,28px 28px,28px 28px;width:380px;border:2px solid var(--mint);box-shadow:0 0 0 7px rgba(126,224,168,.14),0 40px 90px -30px rgba(31,157,107,.65)}
-.card.nt .nt-logo{display:flex;align-items:center;gap:12px;color:#fff;font-size:40px;height:52px}
-.card.nt .ring{width:220px;height:220px}
-.card.nt .track{stroke:rgba(255,255,255,.1)}
-.card.nt .ring-num b{color:var(--mint);font-size:80px}
-.card.nt .ring-num span{color:rgba(255,255,255,.55)}
-.card.nt .feat{background:var(--mint);color:var(--night)}
-.card.nt.hero{transform:scale(1.07)}
+#compHead.big{transform:translateY(250px) scale(1.45)}
+.ask{display:inline-flex;flex-direction:column;align-items:flex-end;gap:10px;margin-top:24px}
+.ask-ctx{display:flex;align-items:center;gap:10px;font-size:22px;color:var(--muted);font-weight:500}
+.ask-b{background:var(--blue);color:#fff;font-size:54px;font-weight:600;letter-spacing:-.015em;padding:22px 42px;border-radius:44px 44px 12px 44px;box-shadow:0 24px 50px -24px rgba(47,111,219,.6)}
+.chat{position:absolute;top:338px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:20px}
+.row{width:1120px;display:flex;align-items:center;gap:26px;opacity:0;transform:translateY(30px)}
+.row.show{opacity:1;transform:none}
+.row.dim{opacity:.32}
+.row.hero{transform:scale(1.04)}
+.av{width:86px;height:86px;border-radius:50%;background:#fff;border:1.5px solid #E7E3DA;display:grid;place-items:center;color:var(--ink);flex:none}
+.who{font-size:20px;color:var(--muted);font-weight:500;margin:0 0 6px 8px}
+.bub{display:inline-flex;align-items:center;min-height:78px;background:#fff;border:1.5px solid #E7E3DA;border-radius:12px 36px 36px 36px;padding:14px 32px;font-size:36px;font-weight:600;letter-spacing:-.01em;box-shadow:0 16px 40px -28px rgba(20,32,26,.35)}
+.dots{display:none;gap:8px;padding:0 4px}
+.dots i{width:12px;height:12px;border-radius:50%;background:#B9B5AC;animation:blink 1s infinite}
+.dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}
+@keyframes blink{0%,80%,100%{opacity:.3;transform:none}40%{opacity:1;transform:translateY(-5px)}}
+.row.typing .dots{display:inline-flex}
+.row.typing .txt{display:none}
+.verdict{margin-left:auto;display:flex;align-items:center;gap:10px;font-size:26px;font-weight:600;color:#C7353B;background:#FCE6E6;padding:12px 24px;border-radius:999px;opacity:0;transform:scale(.9);transition:opacity .4s ease,transform .4s var(--ease)}
+.row.said .verdict{opacity:1;transform:none}
+.row.nt .av{background:var(--night);color:var(--mint);border:2px solid var(--mint)}
+.row.nt .bub{background:var(--night);color:#fff;border:2px solid var(--mint);font-size:44px;min-height:96px;box-shadow:0 0 0 6px rgba(126,224,168,.14),0 30px 60px -24px rgba(31,157,107,.6)}
+.row.nt .bub b{color:var(--mint);margin-left:12px}
+.row.nt .verdict{color:var(--deep);background:#DDF4E6}
 
-/* 3 · cómo te ayuda */
-#helpHead.big{transform:translateY(320px) scale(1.45)}
-.title3{font-size:92px;font-weight:700;letter-spacing:-.03em;line-height:1;margin-top:16px}
-.title3 .w{color:#CFCBC2;transition:color .5s ease}
-.title3 .w.on{color:var(--ink)}
-.panels{position:absolute;top:296px;left:0;right:0;display:flex;justify-content:center;gap:40px}
-.panel{width:500px;background:#fff;border:1.5px solid #ECE9E2;border-radius:32px;overflow:hidden;box-shadow:0 30px 70px -40px rgba(20,32,26,.4);opacity:0;transform:translateY(54px)}
-.panel.show{opacity:1;transform:none}
-.panel.dim{opacity:.42}
-.illus{height:470px;position:relative;display:flex;align-items:center;justify-content:center}
-.cap{padding:28px 34px 30px;font-size:32px;font-weight:600;letter-spacing:-.015em}
-/* móvil */
-.phone{width:240px;height:400px;border-radius:46px;background:#1B2B24;border:2px solid #2E443A;padding:12px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
-.screen{height:100%;border-radius:35px;background:#FAFAF7;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;position:relative}
-.screen::before{content:"";position:absolute;top:12px;left:50%;width:74px;height:9px;border-radius:9px;background:#1B2B24;transform:translateX(-50%)}
-.screen .s1{font-size:21px;color:var(--muted);margin-top:16px}
-.screen .s2{font-size:56px;font-weight:700;color:var(--green);letter-spacing:-.03em;line-height:1.05}
-.screen .s3{font-size:19px;color:var(--muted)}
-.pbar{width:160px;height:10px;border-radius:10px;background:var(--line);margin-top:16px;overflow:hidden}
-.pbar i{display:block;height:100%;width:0;background:var(--mint);border-radius:10px;transition:width 1.3s var(--ease) .5s}
-.play .pbar i{width:62%}
-/* botes */
-.jars{display:flex;align-items:flex-end;gap:30px}
-.jarw{position:relative;display:flex;flex-direction:column;align-items:center;gap:14px}
-.jar{width:118px;height:220px;border:5px solid var(--lilac);border-radius:28px;background:#FBFAFF;position:relative;overflow:hidden}
-.fill{position:absolute;left:0;right:0;bottom:0;height:0;background:linear-gradient(#A795EA,#8E74DC);border-top:5px solid #BFB0F1;transition:height 1.5s var(--ease) .6s}
-.play .fill{height:var(--h)}
-.jarl{font-size:22px;font-weight:700;color:var(--purple);letter-spacing:.04em}
-.coin{position:absolute;top:0;left:50%;width:38px;height:38px;border-radius:50%;background:var(--purple);color:#fff;font-size:20px;font-weight:700;display:grid;place-items:center;opacity:0;transform:translate(-50%,-90px);z-index:2;box-shadow:0 4px 10px rgba(123,91,214,.35)}
-.play .coin{animation:drop .9s ease-in var(--d) 3 both}
-@keyframes drop{0%{transform:translate(-50%,-110px);opacity:0}20%{opacity:1}75%{transform:translate(-50%,40px);opacity:1}100%{transform:translate(-50%,70px);opacity:0}}
-.pig{color:var(--purple);margin-left:8px;margin-bottom:40px}
-/* barras */
-.bars{display:flex;align-items:flex-end;gap:16px;height:340px;padding-top:40px}
-.barw{display:flex;flex-direction:column;align-items:center;gap:12px;position:relative}
-.bar{width:44px;height:0;border-radius:11px 11px 6px 6px;background:#A9C1F2;transition:height .9s var(--ease) calc(var(--i) * 80ms + .35s),background-color .5s ease}
-.play .bar{height:var(--h)}
-.play .bar.best{background:var(--green);transition:height .9s var(--ease) calc(var(--i) * 80ms + .35s),background-color .5s ease 1.5s}
-.barl{font-size:20px;font-weight:600;color:#6B7A99}
-.tag{position:absolute;bottom:calc(var(--h) + 50px);left:50%;white-space:nowrap;background:var(--green);color:#fff;font-size:20px;font-weight:600;padding:8px 16px;border-radius:999px;opacity:0;transform:translate(-50%,10px);transition:opacity .5s ease,transform .5s var(--ease)}
-.play .tag{opacity:1;transform:translate(-50%,0);transition-delay:1.7s}
+/* 3 · cómo te ayuda: un móvil que cambia de pantalla */
+.steps{position:absolute;left:200px;top:560px;width:780px;transform:translateY(-50%)}
+.steps.big{transform:translate(400px,-50%)}
+.stp{padding:12px 0}
+.sw{font-size:128px;font-weight:700;letter-spacing:-.035em;line-height:1;color:#CFCBC2;transition:color .5s ease}
+.stp.on .sw{color:var(--ink)}
+.sd{font-size:30px;color:var(--muted);font-weight:500;margin-top:14px;height:40px;opacity:0;transform:translateY(-6px);transition:opacity .5s ease .15s,transform .5s var(--ease) .15s}
+.stp.on .sd{opacity:1;transform:none}
+.steps.big .stp .sd{opacity:0}
+.halo{position:absolute;left:1390px;top:540px;width:1000px;height:1000px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(126,224,168,.38),rgba(126,224,168,0));opacity:0;transition:opacity .9s ease;pointer-events:none}
+.halo.show{opacity:1}
+.bphone{position:absolute;left:1180px;top:100px;width:420px;height:880px;border-radius:66px;background:#14221C;border:2px solid #2E443A;padding:16px;box-shadow:0 50px 100px -30px rgba(16,32,26,.55);opacity:0;transform:translateX(90px)}
+.bphone.show{opacity:1;transform:none}
+.bscreen{position:relative;height:100%;border-radius:52px;background:#FAFAF7;overflow:hidden}
+.bscreen::before{content:"";position:absolute;top:16px;left:50%;width:112px;height:30px;border-radius:20px;background:#14221C;transform:translateX(-50%);z-index:4}
+.scr{position:absolute;inset:0;padding:84px 34px 36px;display:flex;flex-direction:column;gap:18px;opacity:0;transform:translateX(30px);transition:opacity .5s ease,transform .6s var(--ease)}
+.scr.on{opacity:1;transform:none}
+.scr h4{font-size:34px;font-weight:700;letter-spacing:-.02em}
+.scr .meta{font-size:20px;color:var(--muted);font-weight:500}
+.scr h4+.meta{margin-top:-12px}
+.field{background:#fff;border:1.5px solid #E7E3DA;border-radius:22px;padding:18px 22px;display:flex;flex-direction:column;gap:2px}
+.field span{font-size:20px;color:var(--muted);font-weight:500}
+.field b{font-size:46px;font-weight:700;letter-spacing:-.02em;min-height:56px;line-height:56px}
+.field.typing{border-color:var(--blue);box-shadow:0 0 0 4px rgba(47,111,219,.12)}
+.field.typing b::after{content:"";display:inline-block;width:3px;height:40px;background:var(--blue);margin-left:4px;vertical-align:-5px;animation:caret 1s steps(1) infinite}
+@keyframes caret{50%{opacity:0}}
+.save{margin-top:auto;background:#E4E1DA;color:#8A8F8C;text-align:center;font-size:28px;font-weight:700;padding:22px;border-radius:22px;transition:background-color .4s ease,color .4s ease}
+.save.ready{background:var(--mint);color:var(--night);animation:pulse 1.4s ease-out 2}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(126,224,168,.75)}100%{box-shadow:0 0 0 22px rgba(126,224,168,0)}}
+.big-n{white-space:nowrap;font-size:80px;font-weight:700;color:var(--green);letter-spacing:-.035em;line-height:1;margin-top:-8px}
+.hchip{align-self:flex-start;background:#DDF4E6;color:var(--deep);font-size:24px;font-weight:600;padding:8px 18px;border-radius:999px}
+.stack{display:flex;gap:4px;height:30px;margin-top:14px}
+.stack i{display:block;height:100%;width:0;border-radius:8px;transition:width .9s var(--ease) calc(var(--k) * 150ms + .5s)}
+.scr.on .stack i{width:var(--w)}
+.lines{display:flex;flex-direction:column}
+.ln{display:flex;align-items:center;gap:12px;font-size:25px;font-weight:500;padding:20px 4px;white-space:nowrap;border-bottom:1.5px solid #ECE9E2}
+.ln b{margin-left:auto;font-weight:700}
+.ln .dot{width:14px;height:14px;border-radius:50%;flex:none}
+.ln.hz{background:#F0ECFB;border:0;border-radius:16px;padding:18px 16px;margin-top:12px;color:var(--purple)}
+.turno{margin-top:auto;display:flex;justify-content:space-between;white-space:nowrap;gap:10px;background:#fff;border:1.5px solid #E7E3DA;border-radius:20px;padding:18px 20px;font-size:19px;color:var(--muted);font-weight:500}
+.turno b{color:var(--ink);font-weight:700}
+.notif{position:absolute;top:64px;left:18px;right:18px;display:flex;align-items:center;gap:14px;background:#fff;border-radius:24px;padding:16px 18px;box-shadow:0 18px 40px -14px rgba(16,32,26,.35);opacity:0;transform:translateY(-170px);transition:transform .7s var(--ease),opacity .4s ease;z-index:3}
+.scr.on .notif{opacity:1;transform:none;transition-delay:1.7s}
+.nmark{width:48px;height:48px;border-radius:14px;background:var(--night);color:var(--mint);display:grid;place-items:center;flex:none}
+.nt1{font-size:16px;color:var(--muted);font-weight:500}
+.nt2{font-size:21px;font-weight:700;line-height:1.2}
+#scrC{padding-top:200px}
+.wbars{display:flex;align-items:flex-end;justify-content:space-between;height:330px;margin-top:6px}
+.wb{display:flex;flex-direction:column;align-items:center;gap:8px}
+.wv{font-size:16px;font-weight:600;color:var(--muted);opacity:0;transition:opacity .4s ease calc(var(--i) * 80ms + .9s)}
+.wbar{width:34px;height:0;border-radius:10px 10px 5px 5px;background:#A9C1F2;transition:height .9s var(--ease) calc(var(--i) * 80ms + .3s),background-color .5s ease}
+.scr.on .wbar{height:var(--h)}
+.scr.on .wv{opacity:1}
+.scr.on .wb.best .wbar{background:var(--green);transition:height .9s var(--ease) calc(var(--i) * 80ms + .3s),background-color .5s ease 1.3s}
+.wb.best .wv{color:var(--green)}
+.wd{font-size:18px;font-weight:600;color:#6B7A99}
+.bestc{margin-top:auto;background:#DDF4E6;color:var(--deep);font-size:24px;font-weight:500;padding:18px 20px;border-radius:18px}
 
 /* cierre */
 #s-close .logo{position:absolute;left:0;right:0;top:44%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;gap:34px;font-size:170px;color:#fff}
@@ -195,58 +203,56 @@ body.idle{cursor:none}
   <section class="scene" id="s-comp" data-bg="#FBFAF7">
     <div class="head t" id="compHead">
       <p class="eyebrow">Lo que ya existe</p>
-      <h2 class="title2">Cuentan lo que facturas.<br><span class="g">No lo que ganas.</span></h2>
-      <div class="chips">
-        <span class="chip"><i data-icon="gauge" data-size="22"></i>Neto por hora</span>
-        <span class="chip"><i data-icon="zap" data-size="22"></i>En segundos</span>
-        <span class="chip"><i data-icon="landmark" data-size="22"></i>Lo de Hacienda</span>
-        <span class="chip"><i data-icon="calendar-clock" data-size="22"></i>Mejores turnos</span>
-        <span class="chip"><i data-icon="link" data-size="22"></i>Sin cuotas</span>
+      <div class="ask">
+        <div class="ask-ctx"><i data-icon="moon" data-size="22"></i>23:00 · Pablo acaba el turno</div>
+        <div class="ask-b">¿Cuánto he ganado hoy?</div>
       </div>
     </div>
-    <div class="cards" id="compCards"></div>
+    <div class="chat" id="chat"></div>
   </section>
 
   <!-- 3 · CÓMO TE AYUDA -->
   <section class="scene" id="s-ayuda" data-bg="#F3F1EC">
     <div class="glow"></div>
-    <div class="head t" id="helpHead">
-      <p class="eyebrow">Cómo te ayuda</p>
-      <h2 class="title3"><span class="w">Apuntas.</span> <span class="w">Ves.</span> <span class="w">Decides.</span></h2>
+    <p class="eyebrow" style="position:absolute;top:92px;left:0;right:0;text-align:center">Cómo te ayuda</p>
+    <div class="steps t" id="steps">
+      <div class="stp"><div class="sw">Apuntas.</div><div class="sd">Cierras el turno en segundos.</div></div>
+      <div class="stp"><div class="sw">Ves.</div><div class="sd">Lo que te queda, sin hacer cuentas.</div></div>
+      <div class="stp"><div class="sw">Decides.</div><div class="sd">Qué turnos te compensan de verdad.</div></div>
     </div>
-    <div class="panels">
-      <div class="panel t" id="p1">
-        <div class="illus grid">
-          <div class="phone"><div class="screen">
-            <span data-mark="30" style="color:var(--ink);margin-top:14px"></span>
-            <div class="s1">Te quedan</div>
-            <div class="s2 num"><span id="phoneNum">0,00</span> €</div>
-            <div class="s3">por hora</div>
-            <div class="pbar"><i></i></div>
-          </div></div>
-        </div>
-        <div class="cap">Tu neto por hora</div>
+    <div class="halo" id="halo"></div>
+    <div class="bphone t" id="bphone"><div class="bscreen">
+      <div class="scr" id="scrA">
+        <h4>Cerrar turno</h4>
+        <div class="meta">Hoy · 23:00</div>
+        <div class="field"><span>Cobrado</span><b id="fA1"></b></div>
+        <div class="field"><span>Horas</span><b id="fA2"></b></div>
+        <div class="save" id="saveBtn">Guardar turno</div>
       </div>
-      <div class="panel t" id="p2">
-        <div class="illus" style="background:#F0ECFB">
-          <div class="jars">
-            <div class="jarw"><div class="coin" style="--d:.2s">€</div><div class="jar"><div class="fill" style="--h:70%"></div></div><div class="jarl">IVA</div></div>
-            <div class="jarw"><div class="coin" style="--d:.55s">€</div><div class="jar"><div class="fill" style="--h:46%"></div></div><div class="jarl">IRPF</div></div>
-            <div class="pig"><i data-icon="piggy-bank" data-size="120" data-sw="1.6"></i></div>
-          </div>
+      <div class="scr" id="scrB">
+        <div class="meta">Hoy te quedan</div>
+        <div class="big-n num"><span id="netNum">0,00</span> €</div>
+        <div class="hchip num">12,60 € / hora</div>
+        <div class="stack"><i style="--w:27%;--k:0;background:#E5484D"></i><i style="--w:7%;--k:1;background:#8E918F"></i><i style="--w:10%;--k:2;background:#7B5BD6"></i><i style="--w:56%;--k:3;background:#7EE0A8"></i></div>
+        <div class="lines num">
+          <div class="ln"><span class="dot" style="background:#E5484D"></span>Gastos<b>−48,60 €</b></div>
+          <div class="ln"><span class="dot" style="background:#8E918F"></span>Autónomos<b>−12,60 €</b></div>
+          <div class="ln hz"><i data-icon="piggy-bank" data-size="28" data-sw="1.8"></i>Para Hacienda<b>18,00 €</b></div>
         </div>
-        <div class="cap">Hacienda, apartada</div>
+        <div class="turno num"><span>Turno de hoy</span><span><b>8 h</b> · 180 € cobrados</span></div>
       </div>
-      <div class="panel t" id="p3">
-        <div class="illus" style="background:#E8EFFC">
-          <div class="bars" id="bars"></div>
-        </div>
-        <div class="cap">Tus mejores turnos</div>
+      <div class="scr" id="scrC">
+        <div class="notif"><span class="nmark" data-mark="30"></span><div><div class="nt1">netTime · ahora</div><div class="nt2">Los martes ganas más por hora.</div></div></div>
+        <h4>Tu semana</h4>
+        <div class="meta">€ netos por hora</div>
+        <div class="wbars" id="wbars"></div>
+        <div class="bestc">Mejor día: <b>martes</b></div>
       </div>
-    </div>
+    </div></div>
   </section>
 
-  <!-- CIERRE -->
+  
+<!-- CIERRE -->
   <section class="scene grid" id="s-close" data-bg="#10201A">
     <div class="logo"><span data-mark="160"></span><span class="wm">netTime</span></div>
     <div class="cta">Probar</div>
@@ -280,6 +286,9 @@ const ICONS = {
   'calendar-clock':'<path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h5"/><path d="M17.5 17.5 16 16.3V14"/><circle cx="16" cy="16" r="6"/>',
   'link':'<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>',
   'file-text':'<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>',
+  'moon':'<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>',
+  'x':'<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+  'check':'<path d="M20 6 9 17l-5-5"/>',
   'chev-l':'<path d="m15 18-6-6 6-6"/>',
   'chev-r':'<path d="m9 18 6-6-6-6"/>',
   'max':'<path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/>'
@@ -371,62 +380,68 @@ function applyProblema(st,anim){
   question.classList.toggle('show', st===5);
 }
 
-/* ---------- 2 · competencia ---------- */
-const FEATS=['gauge','zap','landmark','calendar-clock','link'];
-const CARDS=[
-  {name:'Libreta o Excel', icon:'notebook-pen', n:1, color:'#E5484D', f:[0,0,0,0,1]},
-  {name:'App de facturas', icon:'receipt',      n:2, color:'#5F6461', f:[0,1,1,0,0]},
-  {name:'Gestoría',        icon:'briefcase',    n:1, color:'#E5484D', f:[0,0,1,0,0]},
-  {nt:true,                                     n:5, color:'#7EE0A8', f:[1,1,1,1,1]}
+/* ---------- 2 · la pregunta ---------- */
+const ANSWERS=[
+  {who:'Libreta o Excel', icon:'notebook-pen', txt:'180 €',                          v:'Eso es lo facturado'},
+  {who:'App de facturas', icon:'receipt',      txt:'Factura nº 47 · 180 €',          v:'Solo ve facturas'},
+  {who:'Gestoría',        icon:'briefcase',    txt:'Te lo decimos en el trimestre',  v:'Llega tarde'},
+  {who:'netTime', nt:true,                     txt:'Te quedan <b>100,80 €</b>',      v:'Al momento'}
 ];
-const cardsEl=document.getElementById('compCards'), compHead=document.getElementById('compHead');
-const RC=502.65;
-CARDS.forEach(cd=>{
-  const el=document.createElement('div');
-  el.className='card t'+(cd.nt?' nt':'');
-  el.style.setProperty('--off', RC*(1-cd.n/5));
-  const top = cd.nt
-    ? `<div class="nt-logo">${mark(48)}<span class="wm">netTime</span></div>`
-    : `<div class="card-ic">${ic(cd.icon,50,1.6)}</div><div class="card-name">${cd.name}</div>`;
-  el.innerHTML = `${top}
-    <div class="ring"><svg viewBox="0 0 200 200"><circle class="track" cx="100" cy="100" r="80" fill="none" stroke-width="16"/><circle class="prog" cx="100" cy="100" r="80" fill="none" stroke-width="16" stroke-linecap="round" stroke="${cd.color}"/></svg>
-      <div class="ring-num"><div><b class="num">0</b><span>/5</span></div></div></div>
-    <div class="feats">${cd.f.map((y,k)=>`<div class="feat${y?' y':''}">${ic(FEATS[k],24,2)}</div>`).join('')}</div>`;
-  cardsEl.appendChild(el); cd.el=el; cd.num=el.querySelector('.ring-num b');
+const chat=document.getElementById('chat'), compHead=document.getElementById('compHead');
+ANSWERS.forEach(a=>{
+  const r=document.createElement('div'); r.className='row t'+(a.nt?' nt':'');
+  r.innerHTML=`<div class="av">${a.nt?mark(46):ic(a.icon,40,1.7)}</div>
+    <div><div class="who">${a.who}</div><div class="bub"><span class="dots"><i></i><i></i><i></i></span><span class="txt num">${a.txt}</span></div></div>
+    <div class="verdict">${ic(a.nt?'check':'x',24,2.6)}${a.v}</div>`;
+  chat.appendChild(r); a.el=r;
 });
 function applyComp(st,anim){
   compHead.classList.toggle('big', st===0);
-  CARDS.forEach((cd,k)=>{
-    const show=st>=k+1, was=cd.el.classList.contains('show');
-    cd.el.classList.toggle('show', show);
-    if(show && !was) count(cd.num, cd.n, {anim, from:0, dur:1100, delay:300});
-    if(!show) count(cd.num, 0, {anim:false});
-    cd.el.classList.toggle('dim',  st===4 && k<3);
-    cd.el.classList.toggle('hero', st===4 && k===3);
+  ANSWERS.forEach((a,k)=>{
+    const r=a.el, show=st>=k+1, was=r.classList.contains('show');
+    clearTimeout(r._t);
+    r.classList.toggle('show', show);
+    if(show && !was && anim && !RM){
+      r.classList.add('typing'); r.classList.remove('said');
+      r._t=setTimeout(()=>{ r.classList.remove('typing'); r.classList.add('said'); }, 1000);
+    } else if(show){ r.classList.remove('typing'); r.classList.add('said'); }
+    else { r.classList.remove('typing','said'); }
+    r.classList.toggle('dim',  st===4 && k<3);
+    r.classList.toggle('hero', st===4 && k===3);
   });
 }
 
-/* ---------- 3 · cómo te ayuda ---------- */
-const DAYS=[['L',60],['M',100],['X',45],['J',55],['V',90],['S',68],['D',38]];
-document.getElementById('bars').innerHTML = DAYS.map(([d,h],i)=>{
-  const px=Math.round(h/100*270);
-  return `<div class="barw" style="--h:${px}px">${d==='M'&&i===1?'<div class="tag">Tu mejor día</div>':''}<div class="bar${i===1?' best':''}" style="--i:${i}"></div><div class="barl">${d}</div></div>`;
-}).join('');
-const helpHead=document.getElementById('helpHead'), words=[...helpHead.querySelectorAll('.w')],
-      panels=['p1','p2','p3'].map(id=>document.getElementById(id)), phoneNum=document.getElementById('phoneNum');
-function applyAyuda(st,anim){
-  helpHead.classList.toggle('big', st===0);
-  words.forEach((w,k)=>w.classList.toggle('on', st===0 || st===4 || st===k+1));
-  panels.forEach((p,k)=>{
-    const show=st>=k+1, was=p.classList.contains('show');
-    p.classList.toggle('show', show);
-    p.classList.toggle('play', show);
-    p.classList.toggle('dim', st>=1 && st<=3 && k<st-1);
-    if(k===0){
-      if(show && !was) count(phoneNum, 12.36, {anim, from:0, dec:2, dur:1400, delay:450});
-      if(!show) count(phoneNum, 0, {anim:false, dec:2});
-    }
+/* ---------- 3 · el móvil ---------- */
+const WEEK=[['L',11.2],['M',15.1],['X',9.8],['J',10.9],['V',14.2],['S',12.4],['D',8.9]];
+document.getElementById('wbars').innerHTML = WEEK.map(([d,v],i)=>
+  `<div class="wb${i===1?' best':''}" style="--i:${i}"><span class="wv num">${v.toFixed(1).replace('.',',')}</span><div class="wbar" style="--h:${Math.round(v/15.1*250)}px"></div><span class="wd">${d}</span></div>`).join('');
+const stepsEl=document.getElementById('steps'), stps=[...stepsEl.querySelectorAll('.stp')],
+      bphone=document.getElementById('bphone'), halo=document.getElementById('halo'),
+      scrs=['scrA','scrB','scrC'].map(id=>document.getElementById(id)),
+      fA1=document.getElementById('fA1'), fA2=document.getElementById('fA2'),
+      saveBtn=document.getElementById('saveBtn'), netNum=document.getElementById('netNum');
+let typeTimers=[];
+function fillFields(){ fA1.textContent='180 €'; fA2.textContent='8 h'; [fA1,fA2].forEach(f=>f.parentElement.classList.remove('typing')); saveBtn.classList.add('ready'); }
+function typeSeq(){
+  fA1.textContent=''; fA2.textContent=''; saveBtn.classList.remove('ready');
+  let t=600;
+  [[fA1,'180 €'],[fA2,'8 h']].forEach(([el,txt])=>{
+    const f=el.parentElement;
+    typeTimers.push(setTimeout(()=>f.classList.add('typing'),t));
+    [...txt].forEach((ch,i)=>{ t+=120; typeTimers.push(setTimeout(()=>{ el.textContent=txt.slice(0,i+1); },t)); });
+    t+=350; typeTimers.push(setTimeout(()=>f.classList.remove('typing'),t)); t+=150;
   });
+  typeTimers.push(setTimeout(()=>saveBtn.classList.add('ready'),t+150));
+}
+function applyAyuda(st,anim){
+  stepsEl.classList.toggle('big', st===0);
+  stps.forEach((s,k)=>s.classList.toggle('on', st===0 || st===k+1));
+  bphone.classList.toggle('show', st>=1); halo.classList.toggle('show', st>=1);
+  const wasOn=scrs.map(s=>s.classList.contains('on'));
+  scrs.forEach((s,k)=>s.classList.toggle('on', st===k+1));
+  typeTimers.forEach(clearTimeout); typeTimers=[];
+  if(st===1){ if(anim && !RM && !wasOn[0]) typeSeq(); else fillFields(); }
+  if(st===2 && !wasOn[1]) count(netNum, 100.80, {anim, from:0, dec:2, dur:1300, delay:450});
 }
 
 /* ---------- motor de pasos ---------- */
@@ -434,7 +449,7 @@ const SCENES=[
   {id:'s-cover', steps:1, brand:false, apply:null},
   {id:'s-problema', steps:6, brand:true, apply:applyProblema},
   {id:'s-comp', steps:5, brand:true, apply:applyComp},
-  {id:'s-ayuda', steps:5, brand:true, apply:applyAyuda},
+  {id:'s-ayuda', steps:4, brand:true, apply:applyAyuda},
   {id:'s-close', steps:1, brand:false, apply:null}
 ];
 const FLAT=[]; SCENES.forEach((s,si)=>{for(let k=0;k<s.steps;k++) FLAT.push([si,k]);});
