@@ -6,9 +6,13 @@ Presentación web para **netTime**, una app que enseña a autónomos y repartido
 
 ## Qué contiene
 
-1. **El problema.** Un gráfico de rosco parte de 100 € facturados y, en cada paso, quita un trozo: gastos (−27 €), cuota de autónomos (−7 €) e IRPF (−10 €). La cifra del centro baja contando hasta los 56 € que quedan de verdad.
-2. **Lo que ya existe.** Pablo acaba el turno y pregunta «¿Cuánto he ganado hoy?». La libreta, la app de facturas y la gestoría le responden en un chat, pero solo saben lo facturado o se lo dicen tarde. netTime responde al momento: te quedan 100,80 €.
-3. **Cómo te ayuda.** «Apuntas. Ves. Decides.» contado con un único móvil que cambia de pantalla: cerrar el turno, ver el neto con su desglose y descubrir qué día rinde más.
+Las cifras son las del vídeo conceptual y la one-page: un turno de Pablo, taxista en Madrid, de **180 € en 11 horas**.
+
+1. **El problema.** Un rosco parte de 180 € y en cada paso quita un trozo: gasolina (−42 €), cuota + seguro (−14 €) y reserva de IRPF (−20,60 €). La cifra del centro baja contando hasta los **103,40 €** que le quedan: **9,40 €/h limpios, no 16,36 €/h** como parecía.
+2. **Lo que ya existe.** Pablo pregunta «¿Cuánto gano de verdad?». La libreta, la app de facturas y la gestoría le responden en un chat, pero solo saben lo facturado o se lo dicen tarde. NetTime responde al momento.
+3. **Cómo te ayuda.** «Apuntas. Ves. Decides.» contado con un móvil que cambia de pantalla: apuntar la jornada, ver el neto con su desglose (y los 144 € apartados para Hacienda esta semana) y descubrir las franjas horarias que más rinden.
+4. **Objetivo SMART.** La frase del objetivo se resalta letra a letra: específico, medible, alcanzable, relevante y temporal.
+5. **Cierre.** Botón y código QR que llevan a la demo: https://jaacobgomez.github.io/nettime-demo/
 
 ## Controles
 
