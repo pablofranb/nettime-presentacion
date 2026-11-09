@@ -177,13 +177,14 @@ body.idle{cursor:none}
 .smart-q{position:absolute;top:180px;left:200px;right:200px;text-align:center;font-size:54px;font-weight:600;letter-spacing:-.02em;line-height:1.3;text-wrap:balance}
 .smart-q .k{border-radius:12px;padding:0 6px;margin:0 -6px;box-decoration-break:clone;-webkit-box-decoration-break:clone;transition:background-color .5s ease,color .5s ease}
 .smart-q .k.on{background:#C4F1D8;color:var(--deep)}
-.tiles{position:absolute;left:150px;right:150px;top:560px;display:grid;grid-template-columns:repeat(5,1fr);gap:24px}
-.tile{background:#fff;border:1.5px solid #ECE9E2;border-radius:28px;padding:30px 26px 34px;opacity:.3;transform:translateY(16px);transition:opacity .5s ease,transform .7s var(--ease),background-color .5s ease,border-color .5s ease,box-shadow .5s ease,color .5s ease}
+.smart-title{position:absolute;top:150px;left:0;right:0;text-align:center;font-size:96px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.tiles{position:absolute;left:180px;right:180px;top:400px;display:grid;grid-template-columns:repeat(5,1fr);gap:24px}
+.tile{background:#fff;border:1.5px solid #ECE9E2;border-radius:32px;padding:56px 20px 50px;text-align:center;opacity:.3;transform:translateY(16px);transition:opacity .5s ease,transform .7s var(--ease),background-color .5s ease,border-color .5s ease,box-shadow .5s ease,color .5s ease}
 .tile.seen{opacity:1;transform:none}
 .tile.cur{background:var(--night);border-color:var(--mint);color:#fff;transform:translateY(-10px);box-shadow:0 0 0 6px rgba(126,224,168,.14),0 30px 60px -24px rgba(31,157,107,.55)}
-.tile .L{font-size:96px;font-weight:800;line-height:1;color:var(--green);letter-spacing:-.03em;transition:color .5s ease}
+.tile .L{font-size:180px;font-weight:800;line-height:1;color:var(--green);letter-spacing:-.03em;transition:color .5s ease}
 .tile.cur .L{color:var(--mint)}
-.tile .n{font-size:28px;font-weight:700;margin-top:14px}
+.tile .n{font-size:34px;font-weight:700;margin-top:22px}
 .tile .x{font-size:22px;color:var(--muted);margin-top:10px;line-height:1.35;transition:color .5s ease}
 .tile.cur .x{color:rgba(255,255,255,.75)}
 
@@ -303,13 +304,13 @@ body.idle{cursor:none}
   <section class="scene" id="s-smart" data-bg="#F3F1EC">
     <div class="glow"></div>
     <p class="eyebrow top-eyebrow">Nuestro objetivo</p>
-    <p class="smart-q" id="smartQ">Que <span class="k" data-k="M">50</span> <span class="k" data-k="S">taxistas y conductores de VTC de Madrid</span> <span class="k" data-k="M">apunten al menos 10 jornadas cada uno</span> <span class="k" data-k="A">en la demo gratuita de NetTime</span> <span class="k" data-k="T">antes del 31 de enero de 2027</span>, <span class="k" data-k="R">para conocer su neto real por hora</span>.</p>
+    <h2 class="smart-title">Objetivo SMART</h2>
     <div class="tiles" id="tiles">
-      <div class="tile"><div class="L">S</div><div class="n">Específico</div><div class="x">Autónomos del transporte en Madrid, apuntando sus jornadas.</div></div>
-      <div class="tile"><div class="L">M</div><div class="n">Medible</div><div class="x">50 usuarios y 10 jornadas por usuario.</div></div>
-      <div class="tile"><div class="L">A</div><div class="n">Alcanzable</div><div class="x">Gratis, sin registro y en menos de 2 minutos por jornada.</div></div>
-      <div class="tile"><div class="L">R</div><div class="n">Relevante</div><div class="x">Sin jornadas apuntadas no hay neto por hora.</div></div>
-      <div class="tile"><div class="L">T</div><div class="n">Temporal</div><div class="x">Fecha límite: 31 de enero de 2027.</div></div>
+      <div class="tile"><div class="L">S</div><div class="n">Específico</div></div>
+      <div class="tile"><div class="L">M</div><div class="n">Medible</div></div>
+      <div class="tile"><div class="L">A</div><div class="n">Alcanzable</div></div>
+      <div class="tile"><div class="L">R</div><div class="n">Relevante</div></div>
+      <div class="tile"><div class="L">T</div><div class="n">Temporal</div></div>
     </div>
   </section>
 
@@ -516,12 +517,9 @@ function applyAyuda(st,anim){
 }
 
 /* ---------- 4 · objetivo SMART ---------- */
-const LETTERS=['S','M','A','R','T'];
-const tiles=[...document.querySelectorAll('#tiles .tile')], kspans=[...document.querySelectorAll('#smartQ .k')];
+const tiles=[...document.querySelectorAll('#tiles .tile')];
 function applySmart(st){
   tiles.forEach((t,k)=>{ t.classList.toggle('seen', st>=k+1); t.classList.toggle('cur', st===k+1); });
-  const L = st>=1 ? LETTERS[st-1] : null;
-  kspans.forEach(s=>s.classList.toggle('on', s.dataset.k===L));
 }
 
 /* ---------- motor de pasos ---------- */
