@@ -11,7 +11,7 @@ Las cifras son las del vídeo conceptual y la one-page: un turno de Pablo, taxis
 1. **El problema.** Un rosco parte de 180 € y en cada paso quita un trozo: gasolina (−42 €), cuota + seguro (−14 €) y reserva de IRPF (−20,60 €). La cifra del centro baja contando hasta los **103,40 €** que le quedan: **9,40 €/h limpios, no 16,36 €/h** como parecía.
 2. **Lo que ya existe.** Pablo pregunta «¿Cuánto gano de verdad?». La libreta, la app de facturas y la gestoría le responden en un chat, pero solo saben lo facturado o se lo dicen tarde. NetTime responde al momento.
 3. **Cómo te ayuda.** «Apuntas. Ves. Decides.» contado con un móvil que cambia de pantalla: apuntar la jornada, ver el neto con su desglose (y los 144 € apartados para Hacienda esta semana) y descubrir las franjas horarias que más rinden.
-4. **Objetivo SMART.** Antes del 31 de mayo de 2027, que autónomos sin asalariados de Madrid usen NetTime para conocer y optimizar su neto real por hora: que el 60 % la use 4 días a la semana y gane un 5 % más de neto por hora. Cada letra (Specific, Measurable, Achievable, Relevant, Time-bound) se ilumina con su explicación y al final aparece la frase completa.
+4. **Objetivo SMART.** Antes del 31 de mayo de 2027, que autónomos sin asalariados de Madrid usen NetTime para conocer y optimizar su neto real por hora: que el 60 % la use 4 días a la semana y gane un 5 % más de neto por hora. Cada letra (Specific, Measurable, Achievable, Relevant, Time-bound) se ilumina con su explicación.
 5. **Cierre.** Botón y código QR que llevan a la demo: https://jaacobgomez.github.io/nettime-demo/
 
 ## Controles
